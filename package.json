@@ -3,5 +3,11 @@
     "readline-promise": "^1.0.5",
     "require": "^2.4.20"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+      "test": "jest"
+    }
 }

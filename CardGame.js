@@ -41,15 +41,7 @@ export default class CardGame {
 
     checkTotalScore(card) {
 
-        if(this.isComputerStay && this.isUserStay) {
-            if(this.userScore > this.computerScore) {
-                console.log('winner is User');
-            } else if(this.userScore < this.computerScore) {
-                console.log('user is loser');
-            } else {
-                console.log('score draw');
-            }
-        }
+
         
         if(this.isUserTurn && !this.isUserStay) {
             console.log('Current turn is that of user and picked up card is ', card.getCardValue());
@@ -74,6 +66,16 @@ export default class CardGame {
             }
             if(this.computerScore > 20) {
                 this.isComputerStay = true;
+            }
+        }
+
+        if(this.isComputerStay && this.isUserStay) {
+            if(this.userScore > this.computerScore) {
+                console.log('winner is User');
+            } else if(this.userScore < this.computerScore) {
+                console.log('winner is computer');
+            } else {
+                console.log('score draw');
             }
         }
     }
