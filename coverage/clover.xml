@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715144847937" clover="3.2.0">
-  <project timestamp="1715144847937" name="All files">
+<coverage generated="1715183427341" clover="3.2.0">
+  <project timestamp="1715183427341" name="All files">
     <metrics statements="43" coveredstatements="43" conditionals="34" coveredconditionals="30" methods="8" coveredmethods="8" elements="85" coveredelements="81" complexity="0" loc="43" ncloc="43" packages="1" files="2" classes="2"/>
     <file name="Card.js" path="/Users/kalyan/Desktop/card game_kalyan/Card.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="4" count="6" type="stmt"/>
-      <line num="9" count="12" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="9" count="13" type="stmt"/>
     </file>
     <file name="CardGame.js" path="/Users/kalyan/Desktop/card game_kalyan/CardGame.js">
       <metrics statements="41" coveredstatements="41" conditionals="34" coveredconditionals="30" methods="6" coveredmethods="6"/>

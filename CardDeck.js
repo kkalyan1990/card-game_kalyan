@@ -4,7 +4,7 @@
 //     constructor() {
 //         const types = ['club','diamond', 'heart', 'spade'];
 //         const cards = [];
-//         for(let val=2; val < 11; val ++) {
+//         for(let val=2; val < 10; val ++) {
 //             for(const tempType of types) {
 //                 const card = new Card(val,tempType);
 //                 cards.push(card);
