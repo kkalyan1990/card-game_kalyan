@@ -15,23 +15,78 @@ export default class CardGame {
     }
 
 
-    userTurn() {
+     userTurn = () => {
+        let card;
         if(this.isUserTurn) {
+
             const readline = rl.default;
             const rlp = readline.createInterface({
                 input: process.stdin,
                 output: process.stdout
               });
+              console.log('sample2');
+              var waitForUserInput = function() {
+                rlp.question("Pick a card ( Enter a number between 1 and 10) /n", answer => {
+                  if (answer > 0 && answer < 11) {
+                    console.log(`answer is ${answer}`);
+                        // card = new Card(number);
+                        // this.checkTotalScore(card);
+                        rlp.close();
+                  } else {
+                    console.log('recursive');
+                      waitForUserInput();
+                  }
+                });
+              }
+              waitForUserInput();
+
+           
+            // const readline = rl.default;
+            // const rlp = readline.createInterface({
+            //     input: process.stdin,
+            //     output: process.stdout
+            //   });
+              
+            //   var waitForUserInput = function() {
+            //     rlp.question("Pick a card ( Enter a number between 1 and 10) /n", answer => {
+            //       if (answer > 0 && answer < 11) {
+            //         console.log('user turn12');
+            //             card = new Card(number);
+            //             this.checkTotalScore(card);
+            //             rlp.close();
+            //       } else {
+            //           waitForUserInput();
+            //       }
+            //     });
+            //   }
+            //   waitForUserInput();
+
+            //   rlp.question('Pick a card ( Enter a number between 1 and 10)', number => {
+
+            //     console.log(`You have entered ${number}!`);
+            //     if(number >0 && number <11) {
+            //         card = new Card(number);
+            //         this.checkTotalScore(card);
+            //         // this.isUserTurn = !this.isUserTurn;
+            //         rlp.close();
+            //     } else {
+            //         console.log('Enter a number between 1 and 10');
+            //     }
+                
+            //   });
               
             //   rlp.question('Who are you?', name => {
             //     console.log(`Hey there ${name}!`);
             //     rlp.close();
             //   });
+        } else {
+            card = new Card(Math.floor(Math.random()*10));
+            this.checkTotalScore(card);
+            // this.isUserTurn = !this.isUserTurn;
         }
         // console.log('in user turn');
         // const card = this.cards[Math.floor(Math.random()*10)];
-        const card = new Card(Math.floor(Math.random()*10));
-        this.checkTotalScore(card);
+        // console.log(this.isUserTurn);
         this.isUserTurn = !this.isUserTurn;
     }
 
@@ -42,7 +97,11 @@ export default class CardGame {
     checkTotalScore(card) {
 
 
-        
+        if(this.isUserStay) {
+            console.log('User has decided to stay');;
+        } else if(this.isComputerStay) {
+            console.log('Computer has decided to stay');
+        }
         if(this.isUserTurn && !this.isUserStay) {
             console.log('Current turn is that of user and picked up card is ', card.getCardValue());
             this.userScore = this.userScore + card.getCardValue();
@@ -64,7 +123,7 @@ export default class CardGame {
             if(this.userScore > 20) {
                 this.isUserStay = true;
             }
-            if(this.computerScore > 20) {
+            if(this.computerScore > 50) {
                 this.isComputerStay = true;
             }
         }
