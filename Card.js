@@ -7,6 +7,7 @@ export default class Card {
 
     getCardValue() {
         return this.value;
+   
         // if(this.value > 1 || this.value < 11) {
         //     return this.value;
         // }
